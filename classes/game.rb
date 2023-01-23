@@ -16,6 +16,7 @@ class Game
     puts "It's the #{@player1.name} and #{@player2.name} maths quiz!"
   end
 
+  # Switches the current player after each question
   def set_current_player
     if @current_player == nil
       @current_player = @player1
@@ -41,6 +42,7 @@ class Game
       new_question.ask_question
       answer = $stdin.gets.chomp
 
+      # Checks user input against total
       if new_question.evaluate_answer(answer)
         puts "Yes that's correct!"
       else
@@ -48,7 +50,7 @@ class Game
         @current_player.lose_life
       end
 
-      # ...until someone loses all lives
+      # ...until someone loses all 3 lives
       if @current_player.lives == 0
         announce_winner
         break

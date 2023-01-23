@@ -2,7 +2,7 @@ class Question
 
   attr_accessor :total
 
-  def initialize(current_player)
+  def initialize
     random_numbers
     total
   end
@@ -18,20 +18,10 @@ class Question
 
   def ask_question
     puts "What does #{@value1} plus #{@value2} equal?"
-    # @answer = $stdin.gets.chomp
-    # evaluate_answer
   end
 
   def evaluate_answer(answer)
     answer.to_i == @total
   end
 
-  # def evaluate_answer
-  #   if @answer.to_i != @total
-  #     puts "Whoops, no that's not right."
-  #     @current_player.lose_life
-  #   else
-  #     puts "Yes that's correct!"
-  #   end
-  # end
 end
