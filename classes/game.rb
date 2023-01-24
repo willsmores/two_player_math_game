@@ -36,7 +36,7 @@ class Game
       # New round begins
       self.set_current_player
 
-      new_question = Question.new(@current_player)
+      new_question = Question.new
 
       print "#{@current_player.name}: "
       new_question.ask_question
@@ -55,20 +55,22 @@ class Game
         announce_winner
         break
       else
+        puts "---------- SCOREBOARD ----------"
         puts "#{@player1.name}: #{@player1.lives}/3 vs #{@player2.name}: #{@player2.lives}/3"
+        puts "---------- NEXT QUESTION ----------"
       end
 
     end
   end
 
   def announce_winner
+    puts "---------- FINAL RESULT ----------"
     if @current_player == @player1
       puts "#{@player2.name} wins with a score of #{@player2.lives}/3!"
-      puts "Good bye!"
     else 
       puts "#{@player1.name} wins with a score of #{@player1.lives}/3!"
-      puts "Good bye!"
     end
+    puts "Good bye!"
   end
 
 end
