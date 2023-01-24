@@ -1,1 +1,5 @@
-# two_player_math_game
+# Two Player Math Game
+
+## To Start
+
+`ruby main.rb`
